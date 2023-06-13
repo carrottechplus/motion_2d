@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,61 +15,160 @@ a {
   text-decoration: none;
 }
 
-section {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(80deg, lightblue, skyblue);
-  overflow: hidden;
-  position: relative;
-}
-section article {
-  width: 200px;
-  height: 200px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 20px;
-  font-family: monospace;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -100px;
-  margin-top: -100px;
-  transition: 0.5s;
-}
-section article:nth-of-type(1) {
-  opacity: 0;
-  transform: translateY(-100%) scale(0.3);
-}
-section article:nth-of-type(2) {
-  opacity: 0.8;
-  transform: translateY(0%) scale(1);
-}
-section article:nth-of-type(3) {
-  opacity: 0;
-  transform: translateY(100%) scale(0.3);
+/* section {
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(80deg, lightblue, skyblue);
+	overflow: hidden;
+	position: relative;
+	perspective: 600px;
+
+	article {
+		width: 800px;
+		height: 500px;
+		background: white;
+		font-weight: bold;
+		font-size: 20px;
+		font-family: monospace;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -400px;
+		margin-top: -250px;
+		transition: 1s;
+
+		&:nth-of-type(1) {
+			opacity: 0;
+			transform: translate(-200%, -200%) rotateY(80deg) scale(0.1);
+		}
+
+		&:nth-of-type(2) {
+			opacity: 0.4;
+			transform: translate(-100%, -100%) rotateY(40deg) scale(0.3);
+		}
+
+		&:nth-of-type(3) {
+			opacity: 0.8;
+			transform: translate(0%, 0%) rotateY(0deg) scale(1);
+		}
+
+		&:nth-of-type(4) {
+			opacity: 0.4;
+			transform: translate(100%, 100%) rotateY(-40deg) scale(0.3);
+		}
+
+		&:nth-of-type(5) {
+			opacity: 0;
+			transform: translate(200%, 200%) rotateY(-90deg) scale(0.1);
+		}
+	}
 }
 
 button {
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	background: transparent;
+	border: 1px solid white;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	line-height: 79px;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: monospace;
+	transition: border-color 1s;
+	&.prev {
+		left: 5%;
+	}
+
+	&.next {
+		right: 5%;
+	}
+
+	&:hover {
+		border-color: blue;
+	}
+} */
+main {
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  position: relative;
+  overflow: hidden;
+}
+main .list li {
+  width: 15vw;
+  height: 40vh;
+  padding: 20px;
+  border: 1px solid aqua;
   position: absolute;
-  top: 50%;
-  margin-top: -10px;
-  background: transparent;
+  top: 40%;
+  left: 50%;
+  z-index: 3;
+}
+main .list li .inner {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: #333;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+main .list li .inner h2 {
+  font: bold 20px/1 "Teko";
+  color: #888;
+  letter-spacing: 1px;
+}
+main .list li .inner h2::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #888;
+  margin-bottom: 10px;
+}
+main .list li:nth-of-type(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
   border: 0;
+  opacity: 0;
+  z-index: 1;
+  transform: scale(2);
+}
+main .list li:nth-of-type(2) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  z-index: 2;
+  transform: scale(1);
+}
+main .list li:nth-of-type(2) .inner {
+  background: #222;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 5vw;
+}
+main .navi {
+  position: absolute;
+  bottom: 5vw;
+  left: 50%;
   color: white;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 20px;
-  font-family: monospace;
-}
-button.prev {
-  left: 5%;
-}
-button.next {
-  right: 5%;
+  z-index: 3;
 }
 
 /*# sourceMappingURL=style.css.map */
