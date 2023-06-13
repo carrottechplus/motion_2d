@@ -1,5 +1,7 @@
 @import 'reset';
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+$width: 15vw;
+$initPos: 50%;
 
 // test.html 관련 css
 /* section {
@@ -92,14 +94,14 @@ main {
 
 	.list {
 		li {
-			width: 15vw;
+			width: $width;
 			height: 40vh;
 			padding: 20px;
-			border: 1px solid aqua;
 			position: absolute;
 			top: 40%;
-			left: 50%;
+			left: $initPos;
 			z-index: 3;
+			transition: 1s;
 
 			.inner {
 				overflow: hidden;
@@ -109,13 +111,15 @@ main {
 				height: 100%;
 				padding: 20px;
 				background: #333;
-				border-radius: 5px;
+				border-radius: 15px;
 				box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+				transition: 1px;
 
 				h2 {
 					font: bold 20px/1 'Teko';
 					color: #888;
 					letter-spacing: 1px;
+					transition: 0.5s 0.2s;
 
 					&::before {
 						content: '';
@@ -124,6 +128,7 @@ main {
 						height: 3px;
 						background: #888;
 						margin-bottom: 10px;
+						transition: 0.5s;
 					}
 				}
 			}
@@ -137,7 +142,6 @@ main {
 			width: 100%;
 			height: 100%;
 			padding: 0;
-			border: 0;
 			opacity: 0;
 			z-index: 1;
 			transform: scale(2);
@@ -153,11 +157,41 @@ main {
 			transform: scale(1);
 
 			.inner {
-				background: #222;
+				background: #e03f3f;
 				box-shadow: none;
 				border-radius: 0;
 				padding: 5vw;
+
+				h2 {
+					color: white;
+					font-size: 8vw;
+
+					&::before {
+						background: white;
+						height: 6px;
+						width: 6vw;
+						margin-bottom: 20px;
+					}
+				}
 			}
+		}
+		li:nth-of-type(3) {
+			left: calc($initPos + $width * 0);
+		}
+		li:nth-of-type(4) {
+			left: calc($initPos + $width * 1);
+		}
+		li:nth-of-type(5) {
+			left: calc($initPos + $width * 2);
+		}
+		li:nth-of-type(6) {
+			left: calc($initPos + $width * 3);
+		}
+		li:nth-of-type(7) {
+			left: calc($initPos + $width * 4);
+		}
+		li:nth-of-type(8) {
+			left: calc($initPos + $width * 5);
 		}
 	}
 
@@ -167,5 +201,15 @@ main {
 		left: 50%;
 		color: white;
 		z-index: 3;
+		display: flex;
+
+		p {
+			text-align: center;
+			line-height: 50px;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			border: 1px solid white;
+		}
 	}
 }
